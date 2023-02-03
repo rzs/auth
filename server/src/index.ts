@@ -1,4 +1,5 @@
-#!/usr/bin/env ts-node
-"use strict";
+import app from './server';
 
-console.log("Hello typescript world");
+app.listen(3001, () => {
+  console.log('My node server startet');
+});
