@@ -1,5 +1,5 @@
 import app from './server';
 
 app.listen(3001, () => {
-  console.log('My node server startet');
+  console.log('My node server with TypeScript startet');
 });

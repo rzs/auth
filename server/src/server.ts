@@ -9,9 +9,9 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 app.get('/', async (req, res) => {
-  console.log('hello from server');
+  console.log('Hello from Node server with TypeScript');
   res.status(200);
-  res.json({message: 'hello from server'});
+  res.json({message: 'Response from Node server with TypeScript'});
 });
 
 export default app;
