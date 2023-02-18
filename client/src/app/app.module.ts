@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SecureResourceComponent } from './secure-resource/secure-resource.component';
+import { AuthConfigModule } from './auth/auth-config.module';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { SecureResourceComponent } from './secure-resource/secure-resource.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AuthConfigModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
