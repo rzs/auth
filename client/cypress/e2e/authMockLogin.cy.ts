@@ -6,7 +6,7 @@ describe('Auth flow', () => {
     it('Create keys', () => {
         cy.visit('/');
 
-        cy.get('a[href*="/some/url"]').should('exist').click();
+        cy.get('a[href*="/secure-resource"]').should('exist').click();
         cy.get('[data-cy="some-attribute"]').should('exist');
     });
 })
