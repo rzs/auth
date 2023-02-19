@@ -4,9 +4,8 @@ describe('Auth flow', () => {
     before(useLocalJWTToken());
 
     it('Create keys', () => {
-        cy.visit('/');
-
-        cy.get('a[href*="/secure-resource"]').should('exist').click();
-        cy.get('[data-cy="some-attribute"]').should('exist');
+        cy.visit('localhost:4200/');
+        cy.get('button').should('exist').click();
+        cy.get('[data-cy="secure-resource-is-here"]').should('exist');
     });
 })
