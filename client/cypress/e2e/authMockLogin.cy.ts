@@ -5,6 +5,7 @@ describe('Auth flow', () => {
 
     it('Create keys', () => {
         cy.visit('localhost:4200/');
+        //cy.get('a[href*="/secure-resource"]').click();
         cy.get('button').should('exist').click();
         cy.get('[data-cy="secure-resource-is-here"]').should('exist');
     });

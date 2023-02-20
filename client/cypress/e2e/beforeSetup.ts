@@ -29,7 +29,7 @@ export function useLocalJWTToken(tokenMock = defaultTokenMock): Mocha.HookFuncti
         cy.intercept('GET', 'https://127.0.0.1:9000/.well-known/openid-configuration', (req) => {
             return req.reply({
                 issuer: 'https://127.0.0.1:9000',
-                authorization_endpoint: 'https://127.0.0.1:9000/oauth2/token',
+                authorization_endpoint: 'https://127.0.0.1:9000/oauth2/authorize',
                 token_endpoint: 'https://127.0.0.1:9000/oauth2/token',
                 token_endpoint_auth_methods_supported: [
                     'client_secret_basic',
@@ -40,7 +40,7 @@ export function useLocalJWTToken(tokenMock = defaultTokenMock): Mocha.HookFuncti
                 jwks_uri: 'https://127.0.0.1:9000/oauth2/jwks',
                 userinfo_endpoint: 'https://127.0.0.1:9000/userinfo',
                 response_types_supported: ['code'],
-                grant_types_supported: ['authorization_code', 'client_credentials', 'refresh)token'],
+                grant_types_supported: ['authorization_code', 'client_credentials', '(refresh)token'],
                 revocation_endpoint: 'https://127.0.0.1:9000/oauth2/revoke',
                 revocation_endpoint_auth_methods_supported: [
                     'client_secret_basic',
@@ -65,7 +65,7 @@ export function useLocalJWTToken(tokenMock = defaultTokenMock): Mocha.HookFuncti
         const state = req.query['state'];
         nonce = req.query['nonce'];
         Cypress.log({name: 'Request nonce', message: req.query['nonce']});
-        return req.redirect('https://127.0.0.1:4200/?code=123456&state=' + state, 302);
+        return req.redirect('http://localhost:4200/secure-resource/?code=123456&state=' + state, 302);
     }).as('nonce');
 
     tokenMock();
