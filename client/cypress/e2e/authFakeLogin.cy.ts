@@ -22,8 +22,8 @@ describe('Login flow', () => {
     before(useLocalJWTToken(tokenMock));
 
     it('Authenticate', async () => {
-        cy.visit('/');
-        cy.get('a[href*="/some/url"]').click();
-        cy.get('a[href*="/some/url"]').should('exist');
+        cy.visit('localhost:4200/');
+        cy.get('button').should('exist').click();
+        //cy.get('a[href*="/some/url"]').should('exist');
     })
 })

@@ -65,7 +65,7 @@ export function useLocalJWTToken(tokenMock = defaultTokenMock): Mocha.HookFuncti
         const state = req.query['state'];
         nonce = req.query['nonce'];
         Cypress.log({name: 'Request nonce', message: req.query['nonce']});
-        return req.redirect('http://localhost:4200/secure-resource/?code=123456&state=' + state, 302);
+        return req.redirect('http://localhost:4200/?code=123456&state=' + state, 302);
     }).as('nonce');
 
     tokenMock();
