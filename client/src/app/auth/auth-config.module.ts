@@ -11,6 +11,7 @@ import { AuthModule, LogLevel } from 'angular-auth-oidc-client';
             clientId: 'portal',
             scope: 'openid', // 'openid profile ' + your scopes
             responseType: 'code',
+            autoUserInfo: false,
             silentRenew: false,
             renewTimeBeforeTokenExpiresInSeconds: 10,
             logLevel: LogLevel.Debug,
